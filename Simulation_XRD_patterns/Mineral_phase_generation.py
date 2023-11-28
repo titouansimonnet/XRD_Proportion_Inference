@@ -397,12 +397,12 @@ def all_diffracto_cif(path,name,theta,inc_theta,nb_diffracto,lamb,contrib,n_inc_
 
   
   #5% variation for a,b and c
-  a_max = a + (a/100)*5
-  a_min = a - (a/100)*5
-  b_max = b + (b/100)*5
-  b_min = b - (b/100)*5
-  c_max = c + (c/100)*5
-  c_min = c - (c/100)*5
+  a_max = a + (a/100)*2
+  a_min = a - (a/100)*2
+  b_max = b + (b/100)*2
+  b_min = b - (b/100)*2
+  c_max = c + (c/100)*2
+  c_min = c - (c/100)*2
 
   """
   - Random drawing of params a,b and c, taking into account the fact that in certain cases the mesh params must be equal
