@@ -6,5 +6,6 @@ This is a two steps method.
 1. We first train a Neural Network (NN) using synthetic data. 
 1. Then, recovering the trained NN we are able to test the method with 32 experimental data. 
 
-
 ![Abstract](./Figures/Abstract.svg)
+
+## Prerequisites
