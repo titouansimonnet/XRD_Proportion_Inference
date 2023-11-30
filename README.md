@@ -47,6 +47,14 @@ python -m vend XRD
 ```
 
 ## Use the code
+
+The two first steps (for synthetic database generation) are optional.
+The database used in the article is available inclunding synthetic single phases, multicoumpounds and 32 experimental XRD patterns. 
+
+```
+cd Database
+```
+
 ### 1 - Generate synthetic single phase XRD patterns
 
 ```
@@ -73,3 +81,6 @@ python Norm.py
 Then, create linear mixture of single phase XRD patterns in order to create synthetic database with multicompounds XRD patterns. 
 Train, validation and test set can be generate using the Python code.
 The synthetic data need to be normalize with maximum = 1 before to train the NN.
+
+
+### 3 - 
