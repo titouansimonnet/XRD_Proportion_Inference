@@ -72,19 +72,16 @@ def mix(list_cristal,N,data,a_min,a_max,data_size,num,fichier_label,path):
 
 list_cristal = ['Calcite','Gibbsite','Dolomite','Hematite']
 path = """TODO"""
-
-
-#Train
 num = 0
 label = open(path+'label_train.csv',mode='w')
 a_min = 1
-a_max = 1000
-long = 10000
-data = 'train'
+a_max = 1000 # Files 1 -> 1000 to create training set
+long = 10000 # Number of multiphase XRD patterns we want to generate
+data = 'train' #Trainset
 
 
 for i in range(long):
-    N = np.random.randint(1,4) # Mix from 1 to 3 single signals
+    N = np.random.randint(1,5) # Mix from 1 to 3 single signals
     mix(list_cristal = list_cristal, N = N,data = data,a_min = a_min,a_max = a_max, data_size = 2905,num = num,fichier_label = label, path = path)
     num = num + 1
         
