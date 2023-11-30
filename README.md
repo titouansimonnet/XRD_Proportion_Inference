@@ -23,6 +23,15 @@ git clone https://github.com/titouansimonnet/XRD_Proportion_Inference
 
 cd XRD_Proportion_Inference
 ```
+- XRD_proportion_Inference
+  - Databases
+    - Experimental
+    - Single_phase
+    - Mix_norm
+  - Simulation_XRD_patterns
+  - Neural_network
+
+
 ### 2 -  Set environnement
 We use a local conda virtual environnement 
 
