@@ -20,7 +20,7 @@ from datetime import datetime
 ***Classes definition and path to data***
 """
 classes = ['Calcite','Gibbsite','Dolomite','Hematite']
-path = 'Databases/Melange_norm/'
+path = 'Databases/Mix_norm/'
 
 #GPU
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
