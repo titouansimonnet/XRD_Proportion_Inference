@@ -45,3 +45,12 @@ Alternately, it is possible to create the virtual environnement on a remote serv
 ```
 python3 -m vend XRD
 ```
+
+## Use the code
+### 1 - Generate synthetic database
+
+
+```
+cd Simulation_XRD_patterns
+python Mineral_phase_generation.py
+```
