@@ -7,7 +7,6 @@ import numpy as np
 import pandas as pd
 import CifFile
 import time
-import matplotlib.pyplot as plt
 
 
 
@@ -460,7 +459,7 @@ def all_diffracto_cif(path,name,theta,inc_theta,nb_diffracto,lamb,contrib,n_inc_
                     M_hkl[z,:] = [i,j,k]
                     z = z + 1
     
-        I1 = diffractogramme(D[x],w,inc_theta,LMH,DW,M_hkl,v,var_a,var_b,var_c,cos_alpha,cos_beta,cos_gamma,sin_alpha,sin_beta,sin_gamma,cos_beta_star,np.amin(D[x]),num,F[x],compt,Pos,theta)
+        I1 = diffractogram(D[x],w,inc_theta,LMH,DW,M_hkl,v,var_a,var_b,var_c,cos_alpha,cos_beta,cos_gamma,sin_alpha,sin_beta,sin_gamma,cos_beta_star,np.amin(D[x]),num,F[x],compt,Pos,theta)
         I = I + contrib[x]*I1
         x = x + 1
     # Write the intensity in a file
