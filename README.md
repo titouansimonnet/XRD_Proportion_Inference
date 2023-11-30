@@ -57,13 +57,13 @@ python -m vend XRD
 
 ## Use the code
 
-The two first steps (for synthetic database generation) are optional.
-The database used in the article is available inclunding synthetic single phases, multicoumpounds and 32 experimental XRD patterns. 
+The databases used in the article are available. They include synthetic single phases, multicoumpounds and 32 experimental XRD patterns. 
 
 ```
 cd Database
 ```
 
+## Train the Neural network yourself
 ### 1 - Generate synthetic single phase XRD patterns
 
 ```
@@ -92,4 +92,13 @@ Train, validation and test set can be generate using the Python code.
 The synthetic data need to be normalize with maximum = 1 before to train the NN.
 
 
-### 3 - 
+### 3 - Train the Neural Network
+
+Update the path for the training set before use the following commands.
+
+```
+cd ..
+cd Neural_network
+python train.py
+```
+
