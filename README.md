@@ -60,8 +60,10 @@ python -m vend XRD
 The databases used in the article are available. They include synthetic single phases, multicoumpounds and 32 experimental XRD patterns. 
 
 ```
-cd Database
+cd Neural_network
 ```
+
+In the Neural_network folder you will find the test.py file. It allows to test the trained (on synthetic database) Neural Network available in the same folder (NN_trained_database2). This network is trained as presented in the article. 
 
 ## Train the Neural network yourself
 ### 1 - Generate synthetic single phase XRD patterns
