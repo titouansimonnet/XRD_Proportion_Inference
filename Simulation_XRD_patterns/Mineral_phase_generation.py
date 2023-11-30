@@ -493,5 +493,5 @@ name ='Calcite'  # ENTER CRYSTAL NAME FIRST CAPITAL LETTER ex: Calcite, Gibbsite
 lamb = np.array([1.5348,1.5406,1.5411,1.5444,1.5447,1.3923]) # Adapt to the device -> Wavelength function
 contrib = np.array([0.01586,0.56768,0.07601,0.25107,0.08688,0.00249]) # Adapt to the device -> Wavelength function
 
-all_diffracto_cif(path = path ,name = name ,theta = theta ,inc_theta = inc_theta, nb_diffracto = 1500, lamb = lamb, contrib = contrib)
+all_diffracto_cif(path = path ,name = name ,theta = theta ,inc_theta = inc_theta, nb_diffracto = 1, lamb = lamb, contrib = contrib)
 

@@ -13,7 +13,6 @@ PARAMETERS :
 - data(Matrix): Normalize signal
 
 """
-
 def write(new_path,old_path,file_name,data):
     f = open(old_path+file_name, 'r')
     fichier = open(new_path+file_name,'w')
@@ -26,7 +25,8 @@ def write(new_path,old_path,file_name,data):
     
 
 
-""" Attenuation coefficient for Calcite, Dolomite and Hematite.
+"""
+Attenuation coefficient for Calcite, Dolomite and Hematite.
 Calculating according to the Gibbsite's one.
 """
 coeff_calcite = 0.435215611
@@ -36,9 +36,16 @@ coeff_hematite = 0.176194569
 
 # Calculation of the new intensity for single mineral phases XRD patterns. To do before mixing the single phases signals !!
 
-old_path = 'Pur_XRD/'
-new_path = 'Pur_XRD_2/'
-for l in range(1500):
+"""
+PARAMETERS TO DO
+"""
+old_path = '' # TODO
+new_path = '' # TODO
+N = 1 # Number of single phase XRD patterns for each mineral phases.
+
+
+
+for l in range(N):
     C = pd.read_csv(old_path + 'Calcite' + str(l+1) + '.txt',skiprows=1,header=None,names=['I'])
     H = pd.read_csv(old_path + 'Hematite' + str(l+1) + '.txt',skiprows=1,header=None,names=['I'])
     D = pd.read_csv(old_path + 'Dolomite' + str(l+1) + '.txt',skiprows=1,header=None,names=['I'])
@@ -55,4 +62,4 @@ for l in range(1500):
     
     
     if (l%100 == 0):
-        print(np.round((100*l/1500),0), ' % effectué')
+        print(np.round((100*l/N),0), ' % effectué')
