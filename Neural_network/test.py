@@ -23,7 +23,7 @@ import copy
 ***Classes definition and path to data***
 """
 classes = ['Calcite','Gibbsite','Dolomite','Hematite']
-path = 'Database_Turing/Melange_1Data_norm/'
+path = 'Databases/Mix_norm/'
 
 # Using a GPU
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -171,63 +171,35 @@ def test (model, output_file, criterion):
         norme_2 = norme_2 / len(testset)
         RMSE = np.sqrt(norme_2)
         RMSE_classes = np.sqrt( norme_2_classes / len(testset))
-        #RMSE_classes = np.sum(RMSE_classes)
         
         supp = good_support / len(testset)
 
-        output_file.write('Infinite norm : ' + str(norme_inf) + '\n')
+        output_file.write('MMAE : ' + str(norme_inf) + '\n')
         output_file.write('RMSE : ' + str(RMSE) + '\n')
-        output_file.write('‰ Support : ' + str(supp) + '\n' )
+        output_file.write('RRS: ' + str(supp) + '\n' )
         output_file.write('RMSE_classes : ' + str(RMSE_classes[0]) +','+ str(RMSE_classes[1])+','+ str(RMSE_classes[2])+',' + str(RMSE_classes[3]) + '\n' + '\n')
     
         return (norme_inf, RMSE, supp, RMSE_classes)
 
 
 output = open('Results_XRD.txt', mode = 'w') #File for keep results
-out_latex = open('XRD_Latex.tex', mode = 'w')
-nb_training_by_loss = 1 # Number of training for each loss
+nb_training = 1 # Number of training
 
 """
 *** Dirichlet et MSE ***
 """
-N_i = np.zeros(nb_training_by_loss)
-Supp = np.zeros(nb_training_by_loss)
-RMSE = np.zeros(nb_training_by_loss)
+N_i = np.zeros(nb_training)
+Supp = np.zeros(nb_training)
+RMSE = np.zeros(nb_training)
 RMSE_classes = np.zeros(len(classes))
-for i in range(nb_training_by_loss):
-    output.write('Dir_MSE_' + str(i) + ':' + '\n')
-    print('Test MSE & Dirichlet')
+for i in range(nb_training):
+    print('Test')
     model_ft = Net()
     criterion = LossDirichlet_MSE()
-    model_ft.load_state_dict(torch.load('Trained_NN_17072023_1Data/DIR_MSE_'+str(i)))
+    model_ft.load_state_dict(torch.load(NN_trained_database2))
     N_i[i], RMSE[i], Supp[i], RMSE_classes = test(model = model_ft, output_file = output, criterion = criterion)
 
-# Get the mean and standard deviation value on the five different training
-N_i_mean = np.mean(N_i)
-N_i_mean = np.around(N_i_mean, decimals = 4)
-N_i_std = np.std(N_i)
-N_i_std = np.around(N_i_std, decimals = 4)
-RMSE_mean = np.mean(RMSE)
-RMSE_mean = np.around(RMSE_mean, decimals = 4)
-RMSE_std = np.std(RMSE)
-RMSE_std = np.around(RMSE_std, decimals = 4)
-Supp_mean = 100 * np.mean(Supp)
-Supp_mean = np.around(Supp_mean, decimals = 2)
-Supp_std = 100 * np.std(Supp)
-Supp_std = np.around(Supp_std, decimals = 2)
-RMSE_classes_mean = np.mean(RMSE_classes)
-RMSE_classes_std = np.std(RMSE_classes)
-
-output.write ('Norme_inf moyenne : ' + str(N_i_mean) + ' ,std : ' + str(N_i_std)  +'\n')
-output.write ('RMSE_moyenne : ' + str(RMSE_mean) + ' ,std : ' + str(RMSE_std)  +'\n')
-output.write ('Supp moyen : ' + str(Supp_mean) + ' ,std : ' + str(Supp_std)  + '\n' + '\n')
-output.write ('RMSE classes : ' + str(RMSE_classes_mean) + ' ,std : ' + str(RMSE_classes_std) + '\n'+ '\n' )
-out_latex.write('MSE \& Dirichlet & ' + str(RMSE_mean) + ' $\pm$ ' + str(RMSE_std) + ' & '
-    + str(N_i_mean) + ' $\pm$ ' + str(N_i_std) + ' & '
-    + str(Supp_mean) + '\% $\pm$ ' + str(Supp_std)  + ' \\' + '\n')
-
 output.close()
-out_latex.close()
 
 
 
