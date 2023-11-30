@@ -35,8 +35,8 @@ def mix(list_cristal,N,data,a_min,a_max,data_size,num,fichier_label,path):
     composant = random.sample(list_cristal,N)
 
     num = num
-    melange = open(path+'Melange'+str(num)+'.txt',mode='w')
-    fichier_label.write('Melange'+str(num)+'.txt,')
+    melange = open(path+'Mix'+str(num)+'.txt',mode='w')
+    fichier_label.write('Mix'+str(num)+'.txt,')
 
     
     for j in range(len(list_cristal)):
