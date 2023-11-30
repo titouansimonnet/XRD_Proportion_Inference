@@ -23,7 +23,7 @@ import copy
 ***Classes definition and path to data***
 """
 classes = ['Calcite','Gibbsite','Dolomite','Hematite']
-path = 'Databases/Mix_norm/'
+path = '~/Databases/Mix_norm/'
 
 # Using a GPU
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
