@@ -41,10 +41,11 @@ def write(new_path,old_path,file_name,data):
 old_path = """ TO DO """
 new_path = """ TO DO """
 
-for l in range(10000):
-    file_name = 'Melange' + str(l) + '.txt'
+N = 1 #Number of XRD patterns
+for l in range(N):
+    file_name = 'Mix' + str(l) + '.txt'
     data = pd.read_csv(old_path + file_name,skiprows=4,header = None)
     v = norm_1(y = data)
     write(new_path = new_path, old_path = old_path, file_name = file_name,data = v)
     if (l%100 == 0):
-        print(np.round((100*l/10000),0), ' % done')
+        print(np.round((100*l/N),0), ' % done')
