@@ -9,3 +9,10 @@ This is a two steps method.
 ![Abstract](./Figures/Abstract.svg)
 
 ## Prerequisites
+
+- python 3.9.7
+- pytorch 1.10.1
+- [crystals](https://crystals.readthedocs.io/en/master/index.html) 1.4.0
+- [PyCifRW](https://pypi.org/project/PyCifRW/4.1/) 4.4.3
+
+## 1- Generation of synthetic XRD patterns
