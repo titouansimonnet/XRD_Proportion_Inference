@@ -1,9 +1,7 @@
-import matplotlib
 matplotlib.use('Agg')
 import torch
 from torchvision import transforms, utils
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
 import torch.nn as nn
@@ -22,7 +20,7 @@ from datetime import datetime
 ***Classes definition and path to data***
 """
 classes = ['Calcite','Gibbsite','Dolomite','Hematite']
-path = 'Database_Turing/Melange_norm/'
+path = 'Databases/Melange_norm/'
 
 #GPU
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -233,10 +231,12 @@ def train(model, nb_epoch, criterion, eps, N_train):
     return(model)
 
 nb_epoch = 100
-eps = 1e-2
-for w in range(5):
+eps = 1e-2 # threshold for RRS
+nb_tr = 1 # training number
+
+for w in range(nb_tr):
     model = Net()
     criterion = LossDirichlet_MSE()
-    print('Train '+ str(w) +' :Dirichlet & MSE')
+    print('Train '+ str(w))
     model_train = train(model = model, nb_epoch = nb_epoch, criterion = criterion, eps = eps, N_train = w)
-    torch.save(model_train.state_dict(),f = 'Trained_NN_03072023/DIR_MSE_'+str(w))
+    torch.save(model_train.state_dict(),f = 'trained_nn'+str(w))
