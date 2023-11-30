@@ -15,4 +15,10 @@ This is a two steps method.
 - [crystals](https://crystals.readthedocs.io/en/master/index.html) 1.4.0
 - [PyCifRW](https://pypi.org/project/PyCifRW/4.1/) 4.4.3
 
-## 1- Generation of synthetic XRD patterns
+## 1- Clone the repository 
+
+```
+git clone https://github.com/titouansimonnet/XRD_Proportion_Inference
+
+cd XRD_Proportion_Inference
+```
