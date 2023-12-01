@@ -69,6 +69,12 @@ In the Neural_network folder you will find the test.py file. It allows to test t
 python test.py
 ```
 
+In the same way, the test_experimental.py file allows to test the trained NN on the 32 experimental data. 
+
+```
+python test_experimental.py
+```
+
 
 ## Train the Neural network yourself
 ### 1 - Generate synthetic single phase XRD patterns
