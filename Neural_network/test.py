@@ -23,7 +23,6 @@ classes = ['Calcite','Gibbsite','Dolomite','Hematite']
 path = '~/Databases/Mix_norm/'
 
 # Using a GPU
-device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 """
 *** Class Dataset definition ***
@@ -133,7 +132,7 @@ Function to test the trained neural network on the pixels of the testset
 """
 
 def test (model, output_file, criterion):
-    model_ft = model.to(device)
+    model_ft = model
     norme_inf = 0
     norme_2 = 0
     norme_2_classes = np.zeros(len(classes))
@@ -142,7 +141,7 @@ def test (model, output_file, criterion):
     with torch.no_grad():
         model_ft.eval()
         for data in testloader:
-            images = data[0].to(device)
+            images = data[0]
             p = data[1]
             y = model_ft(images)
             y = criterion.prediction(y)
@@ -193,7 +192,7 @@ for i in range(nb_training):
     print('Test')
     model_ft = Net()
     criterion = LossDirichlet_MSE()
-    model_ft.load_state_dict(torch.load(NN_trained_database2))
+    model_ft.load_state_dict(torch.load(NN_trained_database2,map_location=torch.device('cpu')))
     N_i[i], RMSE[i], Supp[i], RMSE_classes = test(model = model_ft, output_file = output, criterion = criterion)
 
 output.close()
