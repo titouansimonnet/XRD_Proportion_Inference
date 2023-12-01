@@ -45,7 +45,7 @@ Install dependencies
 ```
 conda install python=3.9.7
 conda install pytorch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1 -c pytorch
-conda install -c conda-forge crystall=1.4.0
+conda install -c conda-forge crystals=1.4.0
 conda install -c anaconda pandas=1.3.4
 ```
 
