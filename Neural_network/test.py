@@ -1,12 +1,9 @@
 """
 Modules
 """
-import matplotlib
-matplotlib.use('Agg')
 import torch
 from torchvision import transforms, utils
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 from torch.utils.data import Dataset, DataLoader
 import torch.nn as nn
