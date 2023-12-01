@@ -192,7 +192,7 @@ for i in range(nb_training):
     print('Test')
     model_ft = Net()
     criterion = LossDirichlet_MSE()
-    model_ft.load_state_dict(torch.load(NN_trained_database2,map_location=torch.device('cpu')))
+    model_ft.load_state_dict(torch.load('NN_trained_database2',map_location=torch.device('cpu')))
     N_i[i], RMSE[i], Supp[i], RMSE_classes = test(model = model_ft, output_file = output, criterion = criterion)
 
 output.close()
