@@ -65,6 +65,8 @@ cd Neural_network
 
 In the Neural_network folder you will find the test.py file. It allows to test the trained (on synthetic database) Neural Network available in the same folder (NN_trained_database2). This network is trained as presented in the article. 
 
+Path needs to be change !
+
 ```
 python test.py
 ```
