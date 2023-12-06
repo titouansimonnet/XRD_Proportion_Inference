@@ -49,7 +49,7 @@ conda install -c conda-forge crystals=1.4.0
 conda install -c anaconda pandas=1.3.4
 ```
 
-Alternately, it is possible to create the virtual environnement on a remote server
+Alternatively, it is possible to create the virtual environnement on a remote server
 
 ```
 python -m vend XRD
