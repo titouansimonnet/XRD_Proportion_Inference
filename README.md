@@ -119,3 +119,4 @@ python train.py
 
 ## Citation 
 
+Phase quantification using deep neural network processing of XRD patterns, Titouan Simonnet*,  Sylvain Grangeon,  Francis Claret,  Nicolas Maubec,  Diarra Fall,  Rachid Harba and  Bruno Galerne, submitted on December 23, 2023.
