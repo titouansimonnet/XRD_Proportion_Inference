@@ -1,4 +1,6 @@
 # Deep neural network method for mineral phases quantification using XRD patterns
+MAJ [2] We propose new work based on vision transformers that improves these results on the analysis of XRD patterns.
+
 
 ## Abstract
 [1] We propose a method to quantify the mineral phases of a material sample using the X-Ray diffraction patterns. 
@@ -8,7 +10,6 @@ This is a two steps method.
 
 ![Abstract](./Figures/Abstract.svg)
 
-[2] We propose new work based on vision transformers that improves these results on the analysis of XRD patterns.
 
 ## Prerequisites
 
