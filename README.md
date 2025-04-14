@@ -1,12 +1,14 @@
 # Deep neural network method for mineral phases quantification using XRD patterns
 
 ## Abstract
-We propose a method to quantify the mineral phases of a material sample using the X-Ray diffraction patterns. 
+[1] We propose a method to quantify the mineral phases of a material sample using the X-Ray diffraction patterns. 
 This is a two steps method. 
 1. We first train a Neural Network (NN) using synthetic data. 
 1. Then, recovering the trained NN we are able to test the method with 32 experimental data. 
 
 ![Abstract](./Figures/Abstract.svg)
+
+[2] We propose new work based on vision transformers that improves these results on the analysis of XRD patterns.
 
 ## Prerequisites
 
@@ -119,4 +121,5 @@ python train.py
 
 ## Citation 
 
-**Phase quantification using deep neural network processing of XRD patterns**, Titouan Simonnet,  Sylvain Grangeon,  Francis Claret,  Nicolas Maubec,  Diarra Fall,  Rachid Harba and  Bruno Galerne, submitted on December 23, 2023.
+[1] **Phase quantification using deep neural network processing of XRD patterns**, Titouan Simonnet,  Sylvain Grangeon,  Francis Claret,  Nicolas Maubec,  Diarra Fall,  Rachid Harba and  Bruno Galerne, 2023 31st European Signal Processing Conference (EUSIPCO).
+[2] **Vision Transformers for X-ray Diffraction Patterns Analysis** Titouan Simonnet, Mame Diarra Fall, Sylvain Grangeon and Bruno Galerne  ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP). IEEE, 2025. p. 1-5.
